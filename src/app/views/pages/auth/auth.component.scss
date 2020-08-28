@@ -1,0 +1,72 @@
+// import login css
+@import "sass/theme/pages/login/login-1";
+
+kt-auth, .kt-login {
+	height: 100%;
+
+	.mat-form-field {
+		width: 100%;
+	}
+
+	// add extra right padding when displaying spinner in button
+	.kt-spinner {
+		padding-right: 3rem !important;
+	}
+}
+
+.example-input{
+    width: 100%;
+    text-align: center;
+}
+
+.kt-login.kt-login--v1 {
+    // Aside
+    .kt-login__aside {
+        width: 1000px; 
+        padding: 3rem 3.5rem;
+        background-repeat: no-repeat;
+        background-size: cover;  
+
+        .kt-login__logo {
+            display: flex;
+        }
+
+        .kt-login__title {
+            color: #2F4F4F;
+            font-size: 2rem;
+            font-weight: 500;                    
+        }     
+
+        .kt-login__subtitle {
+            font-size: 1.2rem;
+            font-weight: 200;
+            margin: 2.5rem 0 3.5rem 0;
+            color: #2F4F4F;
+        }
+
+        .kt-login__info {
+            display: flex;
+            justify-content: space-between;
+
+            .kt-login__menu {
+                > a {
+                    text-decoration: none;
+                    color: #fff;
+                    margin-right: 2rem;
+                    display: inline-block; 
+
+                    @include kt-link-color(rgba(#fff, 0.7), #fff);
+
+                    &:last-child {
+                        margin-right: 0;
+                    }                            
+                }  
+            } 
+
+            .kt-login__copyright {
+                color: rgba(#fff, 0.4);
+            }     
+		}
+	}
+    }
+

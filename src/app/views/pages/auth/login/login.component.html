@@ -1,0 +1,93 @@
+<!--begin::Head-->
+<div class="kt-login__head">
+    <span class="kt-login__signup-label">Don't have an account yet?</span>&nbsp;&nbsp;
+    <a href="javascript:;" routerLink="/auth/register" class="kt-link kt-login__signup-link">Sign Up</a>
+</div>
+<!--end::Head-->
+
+<!--begin::Body-->
+<div class="kt-login__body">
+    <!--begin::Signin-->
+    <div class="kt-login__form">
+        <div class="kt-login__title">
+            <h3>Sign In</h3>
+        </div>
+
+        <kt-auth-notice></kt-auth-notice>
+
+        <!--begin::Form-->
+        <form class="kt-form" [formGroup]="loginForm" autocomplete="off">
+            <div class="form-group">
+                <mat-form-field appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input matInput type="email" placeholder="User Name" formControlName="username" autocomplete="off" />
+                    <mat-error *ngIf="isControlHasError('username','required')">
+                        <strong>User Name is required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="isControlHasError('username','username')">
+                        <strong>entered User Name is invalid</strong>
+                    </mat-error>
+                    <mat-error *ngIf="isControlHasError('username','minlength')">
+                        <strong>User Name must be min length of 3</strong>
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="outline">
+                    <mat-label>PASSWORD</mat-label>
+                    <input matInput [type]="hidepass ? 'text' : 'password'" placeholder="PASSWORD" formControlName="password" autocomplete="off" />
+                    <i [class]="hidepass ? 'fa fa-eye': 'fa fa-eye-slash'" aria-hidden="true" (click)="hidepass =!hidepass" matSuffix></i>
+
+                    <mat-error *ngIf="isControlHasError('password','required')">
+                        <strong>password is required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="isControlHasError('password','minlength')">
+                        <strong>password must be min length of 8 character</strong>
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <!--begin::Action-->
+            <div class="kt-login__actions">
+                <!-- <a href="javascript:;" routerLink="/auth/forgot-password" class="kt-link kt-login__link-forgot">
+					Forgot Password
+				</a> -->
+                <button (click)="submit(staticModal)" [ngClass]="{'kt-spinner kt-spinner--right kt-spinner--md kt-spinner--light': loading}" id="kt_login_signin_submit" class="btn btn-primary btn-elevate kt-login__btn-primary">Login</button>
+            </div>
+            <!--end::Action-->
+        </form>
+        <!--end::Form-->
+        <div class="kt-login__options">
+
+            <a class="btn btn-danger kt-btn" (click)="loginWithGoogle(staticModal)">
+                <i class="fab fa-google"></i> Google
+            </a>
+        </div>
+
+
+    </div>
+
+    <!--end::Signin-->
+</div>
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-static-name" class="modal-title pull-left">Select the Options</h4>
+                <button type="button" class="close pull-right" aria-label="Close" #closeModel (click)="staticModal.hide()">
+						<span aria-hidden="true">&times;</span>
+					</button>
+            </div>
+            <div class="modal-body">
+                <div class="example-button">
+                    <button mat-raised-button color="primary" (click)="navigate('test',staticModal) " style="width: 100%;margin-bottom: 10px;">Take Test</button>
+                    <br>
+                    <button mat-raised-button color="accent" (click)="navigate('result',staticModal)" style="width: 100%;">Test Results</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end::Body-->

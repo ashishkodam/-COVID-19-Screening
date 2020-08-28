@@ -1,0 +1,281 @@
+<kt-portlet>
+    <kt-portlet-body>
+        <mat-horizontal-stepper #stepper>
+            <mat-step [stepControl]="firstFormGroupQuestions">
+                <form [formGroup]="firstFormGroupQuestions" class="kt-form kt-form--group-seperator-dashed">
+
+                    <kt-alert *ngIf="hasFormErrors" type="warn" [showCloseButton]="true" [duration]="10000" (close)="onAlertClose($event)">
+                        Oh snap! Change a few things up and try submitting again.
+                    </kt-alert>
+
+                    <ng-template matStepLabel>First Group Queations</ng-template>
+                    <!-- start -->
+                    <div>
+                        <h5>
+                            <mat-label><i>1 &nbsp;</i>Do you experience Severe, constant chest pain or pressure? </mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="pain">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+                    </div>
+                    <!-- end -->
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i>2 &nbsp;</i> Do yo feel Extreme difficulty in breathing? </mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="breath">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+                    </div>
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i>3 &nbsp;</i> Do you experience Severe, constant lightheadedness? </mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="lighthead">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+                    </div>
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i>4 &nbsp;</i> Do you experience Serious disorientation or unresponsiveness?</mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="unresponsiveness">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+
+                    </div>
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i>5 &nbsp;</i> Do you experience fever, chills or sweating?</mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="sweating">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+
+                    </div>
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i>6 &nbsp;</i>Do you have sore throat or dry cough? </mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="cough">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+                    </div>
+
+                    <!-- <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required> -->
+                    <!-- </mat-form-field> -->
+                    <div align="right">
+                        <button mat-button matStepperNext (click)="secoundquestion()">Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroupQuestions">
+                <form [formGroup]="secondFormGroupQuestions" class="kt-form kt-form--group-seperator-dashed">
+
+                    <kt-alert *ngIf="hasFormErrors" type="warn" [showCloseButton]="true" [duration]="10000" (close)="onAlertClose($event)">
+                        Oh snap! Change a few things up and try submitting again.
+                    </kt-alert>
+
+                    <ng-template matStepLabel>Secound Group Queations</ng-template>
+
+                    <div>
+                        <h5>
+                            <mat-label><i>7 &nbsp;</i> Have you travelled internationally in the last one month? </mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="travelling">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+
+                    </div>
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i>8 &nbsp;</i>Have you been to areas where COVID-19 is widely spread? </mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="covid_area">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+
+                    </div>
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i>9 &nbsp;</i>Have you been exposed to person who is COVID-19 effected? </mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="covid_person">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+
+                    </div>
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i>10 &nbsp;</i>Do you live in a place which is close to healthcare centre?</mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="healthcare_center">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+
+                    </div>
+
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i> 11&nbsp;</i>Do you experience vomiting or diarrhea? </mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="vomit">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+                    </div>
+                    <div align="right">
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext (click)="thirdQuestion()">Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroupQuestions">
+                <ng-template matStepLabel>Done</ng-template>
+                <form [formGroup]="thirdFormGroupQuestions" class="kt-form kt-form--group-seperator-dashed">
+
+                    <kt-alert *ngIf="hasFormErrors" type="warn" [showCloseButton]="true" [duration]="10000" (close)="onAlertClose($event)">
+                        Oh snap! Change a few things up and try submitting again.
+                    </kt-alert>
+
+                    <div>
+                        <h5>
+                            <mat-label><i> 12&nbsp;</i>Select if any of the below applies to you? </mat-label>
+                        </h5>
+                        <br>
+                        <section class="example-section row">
+                            <mat-checkbox class="example-margin" value="none" formControlName="specialCase">None</mat-checkbox>
+                            <mat-checkbox class="example-margin" value="HIV" formControlName="specialCase">HIV</mat-checkbox>
+                            <mat-checkbox class="example-margin" value="cancer" formControlName="specialCase">Cancer</mat-checkbox>
+                            <mat-checkbox class="example-margin" value="kidney" formControlName="specialCase">Kidney Failure</mat-checkbox>
+                            <mat-checkbox class="example-margin" value="lung" formControlName="specialCase">Lung Disease </mat-checkbox>
+                            <mat-checkbox class="example-margin" value="heart" formControlName="specialCase">Heart Problems</mat-checkbox>
+                        </section>
+                    </div>
+                    <br>
+                    <div>
+                        <h5>
+                            <mat-label><i> 13&nbsp;</i>Select if any of the below applies to you? </mat-label>
+                        </h5>
+                        <div class="selectAge">
+                            <mat-form-field appearance="outline">
+
+                                <mat-label>Select Age</mat-label>
+                                <mat-select formControlName="age" name="age">
+                                    <mat-option value="1"> 0 -12
+                                    </mat-option>
+                                    <mat-option value="2">13-35
+                                    </mat-option>
+                                    <mat-option value="3">36-50
+                                    </mat-option>
+                                    <mat-option value="4">50+
+                                    </mat-option>
+                                </mat-select>
+
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>
+                            <mat-label><i>14 &nbsp;</i>Do yo agree to disclose your information to the healthcare center?</mat-label>
+                        </h5>
+                        <br>
+                        <mat-radio-group formControlName="disclose">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+                    </div>
+                </form>
+                <div align="right">
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="submit(stepper,lgModal)">Submit</button>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </kt-portlet-body>
+</kt-portlet>
+
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-sizes-name1" class="modal-title pull-left">Large modal</h4>
+                <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+
+                <div #map id="agm-map" hidden></div>
+                <div class="center" align="center">
+                    <!-- <h4> Your Score :&nbsp; {{covidePoints}}</h4> -->
+                    <ng-container *ngIf="covidStage == '0'">
+                        <h5>All Good. Just follow the tips from our website to be safe. Stay Home, Stay Safe!!</h5>
+                    </ng-container>
+                    <ng-container *ngIf="covidStage === '1' ">
+                        <h5> You have symptoms that fall under COVID-19. We suggest you to get tested at your nearest healthcare facility.
+                        </h5>
+                    </ng-container>
+                    <ng-container *ngIf="covidStage === '2' ">
+                        <h5> Don't panic!! We are with you, Medical Help will be soon at your Doorstep!!
+                        </h5>
+                    </ng-container>
+                    <ng-container *ngIf="covidStage === '3' ">
+                        <h5> We Respect Your Privacy! All information collected at this site will be kept strictly confidential and will not be sold, rented, loaned, or otherwise disclosed. Please make sure you report to a healthcare facility immediately!!
+                        </h5>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

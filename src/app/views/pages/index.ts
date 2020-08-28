@@ -1,0 +1,1 @@
+export { CovidService } from './services/covid.service'

@@ -1,0 +1,28 @@
+{
+    "name": "covid-screaning",
+    "version": "1.0.0",
+    "description": "Wep application for the screening covid19",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^4.0.1",
+        "cookie-session": "^1.4.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-es6-template-engine": "^2.2.1",
+        "mongoose": "^5.9.9",
+        "nodemon": "^2.0.3",
+        "passport": "^0.4.1",
+        "passport-google-oauth20": "^2.0.0",
+        "passport-local": "^1.0.0",
+        "uuid": "^8.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    }
+}
